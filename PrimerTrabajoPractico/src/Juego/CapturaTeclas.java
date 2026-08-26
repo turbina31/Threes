@@ -5,33 +5,41 @@ import java.awt.event.KeyEvent;
 
 public class CapturaTeclas extends KeyAdapter {
 
-    private final Controlador controlador;
+    private final Juego juego;
+    // Si más adelante quieres reiniciar, puedes recibir también un Controlador o la ventana
 
-    public CapturaTeclas(Controlador controlador) {
-        this.controlador = controlador;
+    public CapturaTeclas(Juego juego) {
+        this.juego = juego;
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (controlador.estaJuegoTerminado() && e.getKeyCode() != KeyEvent.VK_R) {
+        if (juego.estaTerminado()) {
+            if (e.getKeyCode() == KeyEvent.VK_R) {
+                // juego.reiniciar();  // ← descomentar cuando este implementado
+            }
             return;
         }
 
         switch (e.getKeyCode()) {
             case KeyEvent.VK_UP:
-                controlador.intentarMover('w');
+                juego.mover(Direccion.ARRIBA);
                 break;
+
             case KeyEvent.VK_DOWN:
-                controlador.intentarMover('s');
+                juego.mover(Direccion.ABAJO);
                 break;
+
             case KeyEvent.VK_LEFT:
-                controlador.intentarMover('a');
+                juego.mover(Direccion.IZQUIERDA);
                 break;
+
             case KeyEvent.VK_RIGHT:
-                controlador.intentarMover('d');
+                juego.mover(Direccion.DERECHA);
                 break;
+
             case KeyEvent.VK_R:
-                controlador.reiniciarJuego();
+                // juego.reiniciar();
                 break;
         }
     }
