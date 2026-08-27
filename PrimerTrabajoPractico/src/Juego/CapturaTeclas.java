@@ -16,7 +16,7 @@ public class CapturaTeclas extends KeyAdapter {
     public void keyPressed(KeyEvent e) {
         if (juego.estaTerminado()) {
             if (e.getKeyCode() == KeyEvent.VK_R) {
-                // juego.reiniciar();  // ← descomentar cuando este implementado
+                 juego.reiniciar();  
             }
             return;
         }
@@ -39,7 +39,7 @@ public class CapturaTeclas extends KeyAdapter {
                 break;
 
             case KeyEvent.VK_R:
-                // juego.reiniciar();
+                 juego.reiniciar();
                 break;
         }
     }

@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Juego {
 
-    private final Tablero tablero;
+    private Tablero tablero;
     private final List<ObservadorJuego> observadores;
     private final Random random;
 
@@ -15,18 +15,27 @@ public class Juego {
     private boolean terminado;
 
     public Juego() {
-        this.tablero = new Tablero(4, 4);
         this.observadores = new ArrayList<>();
         this.random = new Random();
+        inicializarPartida();
+    }
+
+    public void registrarObservador(ObservadorJuego observador) {
+        observadores.add(observador);
+    }
+
+    public void reiniciar() {
+        inicializarPartida();
+        notificarObservadores();
+    }
+
+    private void inicializarPartida() {
+        this.tablero = new Tablero(4, 4);
         this.puntaje = 0;
         this.terminado = false;
 
         colocarFichasIniciales();
         this.proximaFicha = generarFichaAleatoria();
-    }
-
-    public void registrarObservador(ObservadorJuego observador) {
-        observadores.add(observador);
     }
 
     public void mover(Direccion direccion) {
