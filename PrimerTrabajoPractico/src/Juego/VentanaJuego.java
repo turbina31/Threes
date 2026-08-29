@@ -52,106 +52,122 @@ public class VentanaJuego extends JFrame implements ObservadorJuego {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 688, 429);
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5)); // pequeño espacio entre celdas
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(10, 10));
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
-		panel.setLayout(new GridLayout(4, 4, 0, 0));
+		panel.setLayout(new GridLayout(4, 4, 5, 5));
 		
 		JLabel celda0 = new JLabel("00");
 		celda0.setHorizontalAlignment(SwingConstants.CENTER);
+		celda0.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda0.setBackground(new Color(192, 192, 192));
 		celda0.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda0);
 		
 		JLabel celda1 = new JLabel("01");
 		celda1.setHorizontalAlignment(SwingConstants.CENTER);
+		celda1.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda1.setBackground(new Color(192, 192, 192));
 		celda1.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda1);
 		
 		JLabel celda2 = new JLabel("02");
 		celda2.setHorizontalAlignment(SwingConstants.CENTER);
+		celda2.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda2.setBackground(new Color(192, 192, 192));
 		celda2.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda2);
 		
 		JLabel celda3 = new JLabel("03");
 		celda3.setHorizontalAlignment(SwingConstants.CENTER);
+		celda3.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda3.setBackground(new Color(192, 192, 192));
 		celda3.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda3);
 		
 		JLabel celda4 = new JLabel("04");
 		celda4.setHorizontalAlignment(SwingConstants.CENTER);
+		celda4.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda4.setBackground(new Color(192, 192, 192));
 		celda4.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda4);
 		
 		JLabel celda5 = new JLabel("05");
 		celda5.setHorizontalAlignment(SwingConstants.CENTER);
+		celda5.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda5.setBackground(new Color(192, 192, 192));
 		celda5.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda5);
 		
 		JLabel celda6 = new JLabel("06");
 		celda6.setHorizontalAlignment(SwingConstants.CENTER);
+		celda6.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda6.setBackground(new Color(192, 192, 192));
 		celda6.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda6);
 		
 		JLabel celda7 = new JLabel("07");
 		celda7.setHorizontalAlignment(SwingConstants.CENTER);
+		celda7.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda7.setBackground(new Color(192, 192, 192));
 		celda7.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda7);
 		
 		JLabel celda8 = new JLabel("08");
 		celda8.setHorizontalAlignment(SwingConstants.CENTER);
+		celda8.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda8.setBackground(new Color(192, 192, 192));
 		celda8.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda8);
 		
 		JLabel celda9 = new JLabel("09");
 		celda9.setHorizontalAlignment(SwingConstants.CENTER);
+		celda9.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda9.setBackground(new Color(192, 192, 192));
 		celda9.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda9);
 		
 		JLabel celda10 = new JLabel("10");
 		celda10.setHorizontalAlignment(SwingConstants.CENTER);
+		celda10.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda10.setBackground(new Color(192, 192, 192));
 		celda10.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda10);
 		
 		JLabel celda11 = new JLabel("11");
 		celda11.setHorizontalAlignment(SwingConstants.CENTER);
+		celda11.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda11.setBackground(new Color(192, 192, 192));
 		celda11.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda11);
 		
 		JLabel celda12 = new JLabel("12");
 		celda12.setHorizontalAlignment(SwingConstants.CENTER);
+		celda12.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda12.setBackground(new Color(192, 192, 192));
 		celda12.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda12);
 		
 		JLabel celda13 = new JLabel("13");
 		celda13.setHorizontalAlignment(SwingConstants.CENTER);
+		celda13.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda13.setBackground(new Color(192, 192, 192));
 		celda13.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda13);
 		
 		JLabel celda14 = new JLabel("14");
 		celda14.setHorizontalAlignment(SwingConstants.CENTER);
+		celda14.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda14.setBackground(new Color(192, 192, 192));
 		celda14.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda14);
 		
 		JLabel celda15 = new JLabel("15");
 		celda15.setHorizontalAlignment(SwingConstants.CENTER);
+		celda15.setOpaque(true);                    // ¡para que se vea el fondo!
 		celda15.setBackground(new Color(192, 192, 192));
 		celda15.setFont(new Font("Arial", Font.BOLD, 28));
 		panel.add(celda15);
