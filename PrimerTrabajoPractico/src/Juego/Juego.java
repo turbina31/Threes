@@ -46,7 +46,7 @@ public class Juego {
         boolean huboCambios = tablero.mover(direccion);
 
         if (huboCambios) {
-            agregarFichaNueva();
+            agregarFichaNueva(direccion);
             actualizarPuntaje();
             verificarFinDePartida();
             notificarObservadores();
@@ -70,8 +70,6 @@ public class Juego {
     }
 
     private void colocarFichasIniciales() {
-        // Coloca algunas fichas para arrancar la partida (cantidad y
-        // posiciones a definir con el resto del grupo si quieren variarlo)
         for (int i = 0; i < 9; i++) {
             List<Punto> libres = tablero.celdasLibres();
             Punto destino = libres.get(random.nextInt(libres.size()));
@@ -79,11 +77,16 @@ public class Juego {
         }
     }
 
-    private void agregarFichaNueva() {
-        List<Punto> libres = tablero.celdasLibres();
+    private void agregarFichaNueva(Direccion direccion) {
+        List<Punto> libres = tablero.celdasLibresEnBordeOpuesto(direccion);
+        if (libres.isEmpty()) {
+            libres = tablero.celdasLibres();
+        }
+
         if (libres.isEmpty()) {
             return;
         }
+
         Punto destino = libres.get(random.nextInt(libres.size()));
         tablero.colocarFicha(destino.getFila(), destino.getColumna(), proximaFicha);
         proximaFicha = generarFichaAleatoria();

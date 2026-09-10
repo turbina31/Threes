@@ -16,13 +16,10 @@ public class Ficha {
         if (otra == null) {
             return false;
         }
-
-        // Caso especial: 1 y 2 se fusionan entre si (pero no consigo mismos)
         if ((valor == 1 && otra.valor == 2) || (valor == 2 && otra.valor == 1)) {
             return true;
         }
-
-        // Multiplos de 3 se fusionan con otro igual a si mismo
+        
         if (valor >= 3 && valor == otra.valor) {
             return true;
         }

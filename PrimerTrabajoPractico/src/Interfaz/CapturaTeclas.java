@@ -1,13 +1,14 @@
-package Juego;
+package Interfaz;
 
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import Juego.Juego;
+import Juego.Direccion;
 
 public class CapturaTeclas extends KeyAdapter {
 
     private final Juego juego;
-    // Si más adelante quieres reiniciar, puedes recibir también un Controlador o la ventana
-
+    
     public CapturaTeclas(Juego juego) {
         this.juego = juego;
     }

@@ -47,6 +47,38 @@ public class Tablero {
         return libres;
     }
 
+    public List<Punto> celdasLibresEnBordeOpuesto(Direccion direccion) {
+        List<Punto> libres = new ArrayList<>();
+ 
+        if (direccion == Direccion.IZQUIERDA) {
+            for (int f = 0; f < filas; f++) {
+                if (estaVacia(f, columnas - 1)) {
+                    libres.add(new Punto(f, columnas - 1));
+                }
+            }
+        } else if (direccion == Direccion.DERECHA) {
+            for (int f = 0; f < filas; f++) {
+                if (estaVacia(f, 0)) {
+                    libres.add(new Punto(f, 0));
+                }
+            }
+        } else if (direccion == Direccion.ARRIBA) {
+            for (int c = 0; c < columnas; c++) {
+                if (estaVacia(filas - 1, c)) {
+                    libres.add(new Punto(filas - 1, c));
+                }
+            }
+        } else if (direccion == Direccion.ABAJO) {
+            for (int c = 0; c < columnas; c++) {
+                if (estaVacia(0, c)) {
+                    libres.add(new Punto(0, c));
+                }
+            }
+        }
+ 
+        return libres;
+    }
+ 
     public boolean mover(Direccion direccion) {
         boolean huboCambios = false;
 
@@ -122,11 +154,6 @@ public class Tablero {
         }
     }
 
-    /**
-     * Mueve y fusiona una linea (fila o columna) ya orientada, donde el indice
-     * 0 es el "frente" hacia donde se mueve. Cada ficha avanza a lo sumo una
-     * celda, tal como especifica la consigna. Modifica la lista recibida.
-     */
     private boolean moverLinea(List<Ficha> linea) {
         boolean cambio = false;
 
