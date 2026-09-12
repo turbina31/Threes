@@ -15,6 +15,7 @@ public class CapturaTeclas extends KeyAdapter {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        int codigo = e.getKeyCode();
         if (juego.estaTerminado()) {
             if (e.getKeyCode() == KeyEvent.VK_R) {
                  juego.reiniciar();  
@@ -22,26 +23,19 @@ public class CapturaTeclas extends KeyAdapter {
             return;
         }
 
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_UP:
-                juego.mover(Direccion.ARRIBA);
-                break;
-
-            case KeyEvent.VK_DOWN:
-                juego.mover(Direccion.ABAJO);
-                break;
-
-            case KeyEvent.VK_LEFT:
-                juego.mover(Direccion.IZQUIERDA);
-                break;
-
-            case KeyEvent.VK_RIGHT:
-                juego.mover(Direccion.DERECHA);
-                break;
-
-            case KeyEvent.VK_R:
-                 juego.reiniciar();
-                break;
-        }
+        if (codigo == KeyEvent.VK_UP) {
+            juego.mover(Direccion.ARRIBA);
+        } 
+        else if (codigo == KeyEvent.VK_DOWN) {
+            juego.mover(Direccion.ABAJO);
+        } 
+        else if (codigo == KeyEvent.VK_LEFT) {
+            juego.mover(Direccion.IZQUIERDA);
+        } 
+        else if (codigo == KeyEvent.VK_RIGHT) {
+            juego.mover(Direccion.DERECHA);
+        } 
+        else if (codigo == KeyEvent.VK_R) {
+            juego.reiniciar();
     }
 }
