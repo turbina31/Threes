@@ -38,4 +38,5 @@ public class CapturaTeclas extends KeyAdapter {
         else if (codigo == KeyEvent.VK_R) {
             juego.reiniciar();
     }
+    }
 }
